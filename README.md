@@ -16,6 +16,24 @@ Este proyecto permite visualizar, buscar y explorar servicios de AWS de forma or
 - 🎨 **Interfaz moderna**: construida con Bootstrap 5 y estilos personalizados
 
 ---
+## Ejecución del Proyecto
+- **Ejecutar en consola el comando:** npx serve
+
+---
 
 ## 🗂️ Estructura del proyecto
+📁 aws-glosario/
+- │
+- ├── index.html # Página principal
+- ├── style.css # Estilos personalizados
+- ├── servicios.json # Datos del glosario (por categorías)
+- └── README.md # Este archivo 😄
+
+---
+
+🧑‍💻 Autor
+
+Cristian Armijo
+- 💬 Estudiante y entusiasta de la nube ☁️
+- 📚 Preparándome para la certificación AWS Cloud Practitioner
 
