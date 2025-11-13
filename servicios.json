@@ -1,0 +1,154 @@
+{
+  "categories": [
+    {
+      "name": "Cómputo",
+      "services": [
+        {
+          "name": "Amazon EC2 (Elastic Compute Cloud)",
+          "description": "Servicio que permite ejecutar máquinas virtuales en la nube con capacidad de cómputo escalable bajo demanda.",
+          "image": "https://d1.awsstatic.com/logos/aws_logo_smile_1200x630.15d9402b85e3b4ae6e3c2c6f5d2bbf49b5d8a0b2.png"
+        },
+        {
+          "name": "AWS Lambda",
+          "description": "Ejecuta código sin servidores. Solo pagas por el tiempo de ejecución del código, sin preocuparte por la infraestructura.",
+          "image": "https://d1.awsstatic.com/product-marketing/Lambda/Logo_AWSLambda_64.7ad42f3a9a56c1dd9bb35f2f8a0f28d15d03bfc6.png"
+        },
+        {
+          "name": "Amazon ECS (Elastic Container Service)",
+          "description": "Servicio para ejecutar y escalar aplicaciones en contenedores usando Docker en clústeres administrados por AWS.",
+          "image": "https://d1.awsstatic.com/product-marketing/ECS/Product-Page-Diagram_Amazon-ECS_HIW.7d3b24d44b58e5a1f729e5076a6f4c1c91915ab2.png"
+        },
+        {
+          "name": "Amazon EKS (Elastic Kubernetes Service)",
+          "description": "Servicio administrado que facilita la ejecución de Kubernetes en AWS sin necesidad de administrar el plano de control.",
+          "image": "https://d1.awsstatic.com/product-marketing/EKS/Logo_AmazonEKS_64.671ae4c1b93e7a6cb456ba9cbdb6ce7ee511f7a3.png"
+        },
+        {
+          "name": "AWS Elastic Beanstalk",
+          "description": "Permite implementar y escalar aplicaciones web y servicios fácilmente sin gestionar la infraestructura subyacente.",
+          "image": "https://d1.awsstatic.com/product-marketing/Elastic%20Beanstalk/Logo_AWSElasticBeanstalk_64.c6a31e31b404c5d4a0138e2f24d36f5361f6dc4e.png"
+        }
+      ]
+    },
+    {
+      "name": "Almacenamiento",
+      "services": [
+        {
+          "name": "Amazon S3 (Simple Storage Service)",
+          "description": "Servicio de almacenamiento de objetos seguro, duradero y escalable. Ideal para copias de seguridad y contenido estático.",
+          "image": "https://d1.awsstatic.com/product-marketing/S3/Logo_AmazonS3_64.9f3f39cf655aa5e0ecb0c07c2cb9f3da0c9823aa.png"
+        },
+        {
+          "name": "Amazon EBS (Elastic Block Store)",
+          "description": "Proporciona almacenamiento en bloques para instancias EC2. Ideal para bases de datos o sistemas de archivos.",
+          "image": "https://d1.awsstatic.com/product-marketing/EBS/Logo_AmazonEBS_64.4b2e4a9dba2efc76087ff7e2b6ff4ab10b5d3a8c.png"
+        },
+        {
+          "name": "Amazon EFS (Elastic File System)",
+          "description": "Sistema de archivos compartido y elástico para instancias EC2 y otros servicios. Se ajusta automáticamente según el uso.",
+          "image": "https://d1.awsstatic.com/product-marketing/EFS/Logo_AmazonEFS_64.7cf9b2dc8ad3e9a3f1d8e5c4b2d844da48d36d5b.png"
+        },
+        {
+          "name": "AWS Backup",
+          "description": "Servicio centralizado para automatizar y gestionar copias de seguridad en varios servicios de AWS.",
+          "image": "https://d1.awsstatic.com/product-marketing/Backup/Logo_AWSBackup_64.3e6d95f03e97e5c8ab7e287c6df2efdc070ddf5c.png"
+        }
+      ]
+    },
+    {
+      "name": "Bases de Datos",
+      "services": [
+        {
+          "name": "Amazon RDS (Relational Database Service)",
+          "description": "Servicio administrado para bases de datos relacionales como MySQL, PostgreSQL, Oracle y SQL Server.",
+          "image": "https://d1.awsstatic.com/product-marketing/RDS/Logo_AmazonRDS_64.81fdb09b329dfd91b51777c6c056f5a9cf623671.png"
+        },
+        {
+          "name": "Amazon DynamoDB",
+          "description": "Base de datos NoSQL totalmente administrada y de alto rendimiento, ideal para aplicaciones de baja latencia.",
+          "image": "https://d1.awsstatic.com/product-marketing/DynamoDB/Logo_AmazonDynamoDB_64.64b9bdf65c1a7d31498ed8f1a0d8a2bca322a1e4.png"
+        },
+        {
+          "name": "Amazon Redshift",
+          "description": "Almacén de datos (data warehouse) totalmente administrado para análisis a gran escala mediante SQL.",
+          "image": "https://d1.awsstatic.com/product-marketing/Redshift/Logo_AmazonRedshift_64.9f709b0f68de5c40cf2b041dffb5cfb6b00e218e.png"
+        },
+        {
+          "name": "Amazon Aurora",
+          "description": "Base de datos relacional compatible con MySQL y PostgreSQL, optimizada para rendimiento y alta disponibilidad.",
+          "image": "https://d1.awsstatic.com/product-marketing/Aurora/Logo_AmazonAurora_64.0ce3ecfe2416cc4ce16e43b92fdf6a476a7b69d4.png"
+        }
+      ]
+    },
+    {
+      "name": "Red y Entrega de Contenido",
+      "services": [
+        {
+          "name": "Amazon VPC (Virtual Private Cloud)",
+          "description": "Permite crear redes virtuales aisladas dentro de AWS para controlar el tráfico y la seguridad de tus recursos.",
+          "image": "https://d1.awsstatic.com/product-marketing/VPC/Logo_AmazonVPC_64.13f29802a2b66c5bdb0b1a6b9efc1a52481a6e7a.png"
+        },
+        {
+          "name": "Amazon CloudFront",
+          "description": "Red de entrega de contenido (CDN) que acelera la distribución de sitios web, videos y API en todo el mundo.",
+          "image": "https://d1.awsstatic.com/product-marketing/CloudFront/Logo_AmazonCloudFront_64.7646e0d3d8c51b92398b9b7e5b06ccdbcc4576de.png"
+        },
+        {
+          "name": "AWS Direct Connect",
+          "description": "Proporciona una conexión privada y dedicada entre tu red local y AWS, reduciendo latencia y costos de datos.",
+          "image": "https://d1.awsstatic.com/product-marketing/Direct%20Connect/Logo_AWSDirectConnect_64.6e3281c88dc891a5b6a8d621ef37cf64826e8e15.png"
+        },
+        {
+          "name": "AWS Route 53",
+          "description": "Servicio DNS escalable y altamente disponible que traduce nombres de dominio a direcciones IP.",
+          "image": "https://d1.awsstatic.com/product-marketing/Route53/Logo_AmazonRoute53_64.3d90e1b08e238704f6fd1a343b90274b8e8fae93.png"
+        }
+      ]
+    },
+    {
+      "name": "Seguridad e Identidad",
+      "services": [
+        {
+          "name": "AWS Identity and Access Management (IAM)",
+          "description": "Permite gestionar usuarios, roles y políticas para controlar el acceso a los recursos de AWS.",
+          "image": "https://d1.awsstatic.com/product-marketing/IAM/Logo_AWSIAM_64.0e22d67976bbf7c27ef4a0ff23f3031b2f238ba9.png"
+        },
+        {
+          "name": "AWS Key Management Service (KMS)",
+          "description": "Servicio para crear y administrar claves de cifrado y controlar su uso en toda la plataforma AWS.",
+          "image": "https://d1.awsstatic.com/product-marketing/KMS/Logo_AWSKMS_64.3f4f1d2dd933d1a43c1ec640de78e42b04b2cfd8.png"
+        },
+        {
+          "name": "AWS Shield",
+          "description": "Protege las aplicaciones contra ataques DDoS. Incluye una versión estándar gratuita y otra avanzada con soporte 24/7.",
+          "image": "https://d1.awsstatic.com/product-marketing/Shield/Logo_AWSShield_64.01e8b4238ff5b4a26a3b90ee6b6504b77db247ee.png"
+        },
+        {
+          "name": "AWS WAF (Web Application Firewall)",
+          "description": "Protege aplicaciones web contra ataques comunes como inyección SQL o XSS mediante reglas personalizables.",
+          "image": "https://d1.awsstatic.com/product-marketing/WAF/Logo_AWSWAF_64.9a6f1d3b402a287f91dd6d8f3b7b0a55e5ff8a02.png"
+        }
+      ]
+    },
+    {
+      "name": "Monitoreo y Gestión",
+      "services": [
+        {
+          "name": "Amazon CloudWatch",
+          "description": "Servicio para monitorear recursos y aplicaciones, recolectar métricas y configurar alarmas automatizadas.",
+          "image": "https://d1.awsstatic.com/product-marketing/CloudWatch/Logo_AmazonCloudWatch_64.0f29a8b38ddda4c03c06b2e33b260a0b7a07dca5.png"
+        },
+        {
+          "name": "AWS CloudTrail",
+          "description": "Registra todas las acciones realizadas en tu cuenta de AWS para auditorías y cumplimiento de seguridad.",
+          "image": "https://d1.awsstatic.com/product-marketing/CloudTrail/Logo_AWSCloudTrail_64.4b27df7de7d9cb36af5d9d48d3c053a0dd9d6a78.png"
+        },
+        {
+          "name": "AWS Config",
+          "description": "Permite evaluar, auditar y monitorear la configuración de los recursos AWS a lo largo del tiempo.",
+          "image": "https://d1.awsstatic.com/product-marketing/Config/Logo_AWSConfig_64.31a52061a9d83bdb8478b4a60f4b9e1d13e63e87.png"
+        }
+      ]
+    }
+  ]
+}
