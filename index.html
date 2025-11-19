@@ -144,18 +144,54 @@
     });
 
     // Buscar por nombre
-    searchInput.addEventListener('input', e => {
-      const term = e.target.value.toLowerCase();
+  // 🔍 Búsqueda de servicios (reemplaza el listener anterior)
+searchInput.addEventListener('input', (e) => {
+  const term = e.target.value.trim().toLowerCase();
 
-      const filteredCategories = allData
-        .map(cat => ({
-          ...cat,
-          services: cat.services.filter(s => s.name.toLowerCase().includes(term))
-        }))
-        .filter(cat => cat.services.length > 0);
+  // Si no hay término, renderiza todo y retorna
+  if (!term) {
+    renderCategories(allData);
+    return;
+  }
 
-      renderCategories(filteredCategories);
-    });
+  // Filtramos servicios por nombre (sin modificar allData original)
+  const filteredCategories = allData
+    .map(cat => ({
+      ...cat,
+      services: cat.services.filter(s => s.name.toLowerCase().includes(term) || (s.description || '').toLowerCase().includes(term))
+    }))
+    .filter(cat => cat.services.length > 0);
+
+  // Renderizamos resultados filtrados
+  renderCategories(filteredCategories);
+
+  // Esperamos que el DOM haya sido actualizado antes de abrir colapsables
+  // Luego abrimos la primera categoría y el primer servicio encontrado dentro de ella
+  setTimeout(() => {
+    try {
+      // Abrir primera categoría encontrada
+      const firstCategoryCollapse = document.querySelector('#awsGlossary .collapse');
+      if (firstCategoryCollapse) {
+        // Usar la API de Bootstrap para mostrar el colapso (evita manipular clases directamente)
+        const bsCat = bootstrap.Collapse.getOrCreateInstance(firstCategoryCollapse);
+        bsCat.show();
+      }
+
+      // Abrir primer servicio dentro de la primera categoría (si existe)
+      const firstServiceCollapse = document.querySelector('#awsGlossary .accordion-collapse');
+      if (firstServiceCollapse) {
+        const bsSvc = bootstrap.Collapse.getOrCreateInstance(firstServiceCollapse);
+        bsSvc.show();
+
+        // Opcional: hacer scroll suave al servicio encontrado
+        firstServiceCollapse.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (err) {
+      console.error('Error al autoabrir resultados de búsqueda:', err);
+    }
+  }, 120); // pequeño retraso para asegurar renderizado del DOM
+});
+
   </script>
 </body>
 </html>
