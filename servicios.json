@@ -5,27 +5,27 @@
       "services": [
         {
           "name": "Amazon EC2 (Elastic Compute Cloud)",
-          "description": "Servicio que permite ejecutar máquinas virtuales en la nube con capacidad de cómputo escalable bajo demanda.",
+          "description": "Servicio que permite ejecutar máquinas virtuales (instancias) en la nube con capacidad de cómputo escalable bajo demanda. Soporta múltiples familias de instancias (general purpose, compute/memory optimized, GPU, etc.), escalado manual o automático con Auto Scaling, y distintos modelos de compra (On-Demand, Reserved, Spot). Casos de uso: servidores web, aplicaciones empresariales, procesamiento por lotes y entornos de desarrollo/testing. Factores a considerar: selección de tipo de instancia, almacenamiento EBS y diseño de alta disponibilidad en múltiples AZ.",
           "image": "https://d1.awsstatic.com/logos/aws_logo_smile_1200x630.15d9402b85e3b4ae6e3c2c6f5d2bbf49b5d8a0b2.png"
         },
         {
           "name": "AWS Lambda",
-          "description": "Ejecuta código sin servidores. Solo pagas por el tiempo de ejecución del código, sin preocuparte por la infraestructura.",
+          "description": "Plataforma serverless para ejecutar funciones en respuesta a eventos sin gestionar servidores. Cobras por número de solicitudes y duración (GB-segundos) y permite integraciones nativas con muchos servicios AWS (S3, API Gateway, DynamoDB, EventBridge, etc.). Ideal para microservicios, procesamiento de datos en tiempo real, tareas programadas y backend de APIs. Ventaja: eliminas la administración de infra, escalado automático y menor coste para cargas intermitentes; considera límites de duración y aspectos de cold start para cargas latentes sensibles.",
           "image": "https://d1.awsstatic.com/product-marketing/Lambda/Logo_AWSLambda_64.7ad42f3a9a56c1dd9bb35f2f8a0f28d15d03bfc6.png"
         },
         {
           "name": "Amazon ECS (Elastic Container Service)",
-          "description": "Servicio para ejecutar y escalar aplicaciones en contenedores usando Docker en clústeres administrados por AWS.",
+          "description": "Servicio gestionado para ejecutar contenedores Docker en clústeres. Soporta dos modos: EC2 (tú administras instancias) y Fargate (serverless, sin gestionar instancias). Casos de uso: despliegue de microservicios, tareas por lotes y orquestación sencilla cuando no necesitas todo el ecosistema Kubernetes. Ventaja: integración con IAM, ALB/NLB, CloudWatch y facilidad de gestión del ciclo de vida de tareas.",
           "image": "https://d1.awsstatic.com/product-marketing/ECS/Product-Page-Diagram_Amazon-ECS_HIW.7d3b24d44b58e5a1f729e5076a6f4c1c91915ab2.png"
         },
         {
           "name": "Amazon EKS (Elastic Kubernetes Service)",
-          "description": "Servicio administrado que facilita la ejecución de Kubernetes en AWS sin necesidad de administrar el plano de control.",
+          "description": "Servicio administrado que facilita ejecutar clústeres Kubernetes en AWS sin tener que operar el plano de control. Soporta integraciones con IAM, ALB Ingress, Fargate para pods serverless y capacidades de autoscaling. Caso de uso: cargas que requieren Kubernetes por compatibilidad o ecosistema (Helm, operadores, etc.), migraciones de on-prem a la nube usando manifiestos existentes. Ten en cuenta la gestión de versiones de Kubernetes y permisos RBAC.",
           "image": "https://d1.awsstatic.com/product-marketing/EKS/Logo_AmazonEKS_64.671ae4c1b93e7a6cb456ba9cbdb6ce7ee511f7a3.png"
         },
         {
           "name": "AWS Elastic Beanstalk",
-          "description": "Permite implementar y escalar aplicaciones web y servicios fácilmente sin gestionar la infraestructura subyacente.",
+          "description": "Plataforma PaaS que facilita desplegar y escalar aplicaciones web (soporta Java, .NET, Node.js, Python, Ruby, Go, PHP). Gestiona automáticamente el aprovisionamiento de EC2, balanceadores, auto scaling y despliegues mientras te permite acceder a la configuración subyacente si lo necesitas. Casos de uso: rápidamente desplegar aplicaciones sin diseñar la infraestructura; ideal para prototipos y equipos que quieren simplicidad operativa.",
           "image": "https://d1.awsstatic.com/product-marketing/Elastic%20Beanstalk/Logo_AWSElasticBeanstalk_64.c6a31e31b404c5d4a0138e2f24d36f5361f6dc4e.png"
         }
       ]
@@ -35,22 +35,22 @@
       "services": [
         {
           "name": "Amazon S3 (Simple Storage Service)",
-          "description": "Servicio de almacenamiento de objetos seguro, duradero y escalable. Ideal para copias de seguridad y contenido estático.",
+          "description": "Almacenamiento de objetos duradero y altamente disponible pensado para millones de objetos. Soporta clases de almacenamiento (Standard, Intelligent-Tiering, Glacier, Glacier Deep Archive) para optimizar coste según acceso y latencia. Casos de uso: hosting de contenido estático, backups, data lake y almacenamiento para análisis. Características clave: versioning, lifecycle policies, políticas de acceso (IAM, bucket policies), encryption (SSE-S3, SSE-KMS) y eventos S3 para integraciones serverless.",
           "image": "https://d1.awsstatic.com/product-marketing/S3/Logo_AmazonS3_64.9f3f39cf655aa5e0ecb0c07c2cb9f3da0c9823aa.png"
         },
         {
           "name": "Amazon EBS (Elastic Block Store)",
-          "description": "Proporciona almacenamiento en bloques para instancias EC2. Ideal para bases de datos o sistemas de archivos.",
+          "description": "Almacenamiento en bloques persistente diseñado para ser usado por instancias EC2 (discos virtuales). Tipos de volúmenes: gp2/gp3 (general purpose), io1/io2 (IOPS alto), st1/sc1 (throughput-optimizado). Casos de uso: sistemas de archivos en instancias, bases de datos y aplicaciones con requisitos de I/O. Soporta snapshots incrementales a S3 para respaldo y restauración; ten en cuenta la dependencia entre zona de disponibilidad de la instancia y el volumen EBS.",
           "image": "https://d1.awsstatic.com/product-marketing/EBS/Logo_AmazonEBS_64.4b2e4a9dba2efc76087ff7e2b6ff4ab10b5d3a8c.png"
         },
         {
           "name": "Amazon EFS (Elastic File System)",
-          "description": "Sistema de archivos compartido y elástico para instancias EC2 y otros servicios. Se ajusta automáticamente según el uso.",
+          "description": "Sistema de archivos NFS escalable y compartido que puede montarse desde múltiples instancias EC2 y servicios. Ofrece modos de rendimiento y clases de almacenamiento para optimizar costos y latencia, y se escala automáticamente según necesidad. Casos de uso: cargas que requieren almacenamiento compartido (contenedores, CI/CD, home directories). Ventaja: acceso concurrente y administración mínima; considera latencia y coste para I/O intensivo.",
           "image": "https://d1.awsstatic.com/product-marketing/EFS/Logo_AmazonEFS_64.7cf9b2dc8ad3e9a3f1d8e5c4b2d844da48d36d5b.png"
         },
         {
           "name": "AWS Backup",
-          "description": "Servicio centralizado para automatizar y gestionar copias de seguridad en varios servicios de AWS.",
+          "description": "Servicio centralizado para automatizar políticas de backup, retención y restauración a través de múltiples servicios AWS (EBS, RDS, DynamoDB, EFS, Storage Gateway, etc.). Permite definir planes de copia, aplicar etiquetas y auditar cumplimiento, lo que facilita la gobernanza de copias de seguridad en entornos grandes. Es útil para cumplimiento y recuperación ante desastres (DR).",
           "image": "https://d1.awsstatic.com/product-marketing/Backup/Logo_AWSBackup_64.3e6d95f03e97e5c8ab7e287c6df2efdc070ddf5c.png"
         }
       ]
@@ -60,22 +60,22 @@
       "services": [
         {
           "name": "Amazon RDS (Relational Database Service)",
-          "description": "Servicio administrado para bases de datos relacionales como MySQL, PostgreSQL, Oracle y SQL Server.",
+          "description": "Servicio administrado para bases de datos relacionales (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server y Amazon Aurora). Gestiona tareas operativas: parcheo, backups automáticos, snapshots, recuperación y failover multi-AZ. Casos de uso: aplicaciones tradicionales que requieren SQL y transacciones. Modelos de escalado: vertical (tamaño de instancia) y réplicas de lectura; RDS simplifica operaciones pero limita cierto control comparado con bases autogestionadas.",
           "image": "https://d1.awsstatic.com/product-marketing/RDS/Logo_AmazonRDS_64.81fdb09b329dfd91b51777c6c056f5a9cf623671.png"
         },
         {
           "name": "Amazon DynamoDB",
-          "description": "Base de datos NoSQL totalmente administrada y de alto rendimiento, ideal para aplicaciones de baja latencia.",
+          "description": "Base de datos NoSQL totalmente administrada, de baja latencia y escala automática. Soporta modelos de datos clave-valor y documentos, con opciones de capacidad provisionada o bajo demanda y características avanzadas como streams, TTL y Global Tables para replicación multi-región. Casos de uso: aplicaciones con requerimientos de alta concurrencia y baja latencia (juegos, IoT, e-commerce). Ventaja: sin servidores que administrar, con latencias consistentes y alta disponibilidad.",
           "image": "https://d1.awsstatic.com/product-marketing/DynamoDB/Logo_AmazonDynamoDB_64.64b9bdf65c1a7d31498ed8f1a0d8a2bca322a1e4.png"
         },
         {
           "name": "Amazon Redshift",
-          "description": "Almacén de datos (data warehouse) totalmente administrado para análisis a gran escala mediante SQL.",
+          "description": "Data warehouse (almacén de datos) totalmente administrado orientado a análisis a gran escala y consultas SQL complejas. Utiliza almacenamiento columnar y compresión, y ofrece opciones de nodos para rendimiento y escalado. Se integra con S3, Spectrum (consultas federadas) y herramientas BI. Casos de uso: reporting empresarial, análisis de grandes volúmenes y pipelines de datos analíticos.",
           "image": "https://d1.awsstatic.com/product-marketing/Redshift/Logo_AmazonRedshift_64.9f709b0f68de5c40cf2b041dffb5cfb6b00e218e.png"
         },
         {
           "name": "Amazon Aurora",
-          "description": "Base de datos relacional compatible con MySQL y PostgreSQL, optimizada para rendimiento y alta disponibilidad.",
+          "description": "Base de datos relacional compatible con MySQL y PostgreSQL diseñada por AWS para alta performance y disponibilidad. Ofrece replicación de almacenamiento, recuperación rápida y multi-AZ con réplicas de lectura escalables. Su rendimiento suele superar a instalacions tradicionales gracias a optimizaciones internas; es ideal cuando buscas compatibilidad SQL con mayor throughput y resiliencia integrada.",
           "image": "https://d1.awsstatic.com/product-marketing/Aurora/Logo_AmazonAurora_64.0ce3ecfe2416cc4ce16e43b92fdf6a476a7b69d4.png"
         }
       ]
@@ -85,22 +85,22 @@
       "services": [
         {
           "name": "Amazon VPC (Virtual Private Cloud)",
-          "description": "Permite crear redes virtuales aisladas dentro de AWS para controlar el tráfico y la seguridad de tus recursos.",
+          "description": "Servicio que permite crear redes virtuales aisladas dentro de AWS para controlar subredes, routing, tables, gateways y reglas de seguridad (security groups y network ACLs). Es la base de la mayoría de arquitecturas en AWS: define zonas públicas/privadas, conectividad VPN/Direct Connect y segmentación de servicios. Recomendación: diseñar subredes por AZ para alta disponibilidad y aplicar principios de least privilege en reglas de red.",
           "image": "https://d1.awsstatic.com/product-marketing/VPC/Logo_AmazonVPC_64.13f29802a2b66c5bdb0b1a6b9efc1a52481a6e7a.png"
         },
         {
           "name": "Amazon CloudFront",
-          "description": "Red de entrega de contenido (CDN) que acelera la distribución de sitios web, videos y API en todo el mundo.",
+          "description": "CDN (Content Delivery Network) que cachea contenido en edge locations globales para reducir latencia y mejorar la entrega de sitios web, APIs y medios. Soporta integración con S3, ALB y funciones edge (Lambda@Edge / CloudFront Functions) para personalización. Casos de uso: sitios web internacionales, streaming y APIs con usuarios distribuidos geográficamente.",
           "image": "https://d1.awsstatic.com/product-marketing/CloudFront/Logo_AmazonCloudFront_64.7646e0d3d8c51b92398b9b7e5b06ccdbcc4576de.png"
         },
         {
           "name": "AWS Direct Connect",
-          "description": "Proporciona una conexión privada y dedicada entre tu red local y AWS, reduciendo latencia y costos de datos.",
+          "description": "Conexión de red privada dedicada entre tu datacenter y AWS que reduce latencia y costos de transferencia respecto a Internet público. Ideal para entornos híbridos con requisitos de rendimiento o cumplimiento; puede combinarse con enlaces redundantes y con VIFs para separar tráfico. Considera costos de puerto y cargo por uso, y planifica redundancia y failover.",
           "image": "https://d1.awsstatic.com/product-marketing/Direct%20Connect/Logo_AWSDirectConnect_64.6e3281c88dc891a5b6a8d621ef37cf64826e8e15.png"
         },
         {
           "name": "AWS Route 53",
-          "description": "Servicio DNS escalable y altamente disponible que traduce nombres de dominio a direcciones IP.",
+          "description": "Servicio DNS escalable y altamente disponible que soporta resolución pública y privada, routing policies (simple, weighted, latency, failover, geolocation) y health checks. Se integra con otros servicios AWS para automatizar mapeos y soporta gestión de dominios. Casos de uso: gestión de tráfico global, failover entre regiones y balanceo DNS avanzado.",
           "image": "https://d1.awsstatic.com/product-marketing/Route53/Logo_AmazonRoute53_64.3d90e1b08e238704f6fd1a343b90274b8e8fae93.png"
         }
       ]
@@ -110,22 +110,22 @@
       "services": [
         {
           "name": "AWS Identity and Access Management (IAM)",
-          "description": "Permite gestionar usuarios, roles y políticas para controlar el acceso a los recursos de AWS.",
+          "description": "Servicio para gestionar identidades (usuarios, roles, grupos) y políticas que controlan el acceso a recursos AWS. Permite políticas basadas en JSON con permisos finos, MFA, roles temporales y federation (SAML, OIDC). Es piedra angular de la seguridad en AWS: buenas prácticas incluyen least privilege, roles para servicios y revisión periódica de políticas y credenciales.",
           "image": "https://d1.awsstatic.com/product-marketing/IAM/Logo_AWSIAM_64.0e22d67976bbf7c27ef4a0ff23f3031b2f238ba9.png"
         },
         {
           "name": "AWS Key Management Service (KMS)",
-          "description": "Servicio para crear y administrar claves de cifrado y controlar su uso en toda la plataforma AWS.",
+          "description": "Servicio para crear, administrar y usar claves de cifrado (symmetric y asymmetric) en AWS. Se integra con S3, EBS, RDS, Lambda y muchos servicios para cifrado en reposo y en tránsito. Ofrece claves administradas por AWS o por el cliente (CMKs) y auditoría mediante CloudTrail; es fundamental para cumplimiento y protección de datos sensibles.",
           "image": "https://d1.awsstatic.com/product-marketing/KMS/Logo_AWSKMS_64.3f4f1d2dd933d1a43c1ec640de78e42b04b2cfd8.png"
         },
         {
           "name": "AWS Shield",
-          "description": "Protege las aplicaciones contra ataques DDoS. Incluye una versión estándar gratuita y otra avanzada con soporte 24/7.",
+          "description": "Servicio de protección contra ataques DDoS. AWS Shield Standard está incluido y protege contra ataques comunes a capa de red/transport (sin coste adicional); Shield Advanced ofrece protección adicional, detección continua, mitigaciones más avanzadas, análisis y soporte 24/7. Se integra con WAF y Route 53 para protección de aplicaciones críticas.",
           "image": "https://d1.awsstatic.com/product-marketing/Shield/Logo_AWSShield_64.01e8b4238ff5b4a26a3b90ee6b6504b77db247ee.png"
         },
         {
           "name": "AWS WAF (Web Application Firewall)",
-          "description": "Protege aplicaciones web contra ataques comunes como inyección SQL o XSS mediante reglas personalizables.",
+          "description": "Firewall para aplicaciones web que permite definir reglas para bloquear, permitir o contar solicitudes HTTP(S) basadas en IP, patrones, strings o condiciones complejas. Útil para mitigar inyección SQL, XSS y otras vulnerabilidades a nivel de aplicación; puede desplegarse frente a CloudFront, ALB o API Gateway y se configura con managed rules o reglas personalizadas.",
           "image": "https://d1.awsstatic.com/product-marketing/WAF/Logo_AWSWAF_64.9a6f1d3b402a287f91dd6d8f3b7b0a55e5ff8a02.png"
         }
       ]
@@ -135,20 +135,200 @@
       "services": [
         {
           "name": "Amazon CloudWatch",
-          "description": "Servicio para monitorear recursos y aplicaciones, recolectar métricas y configurar alarmas automatizadas.",
+          "description": "Plataforma de monitoreo para métricas, logs y eventos que ayuda a observar el estado de recursos y aplicaciones. Soporta custom metrics, dashboards, alarmas, logs insights y eventos que disparan acciones automatizadas (autoscaling, lambdas). Casos de uso: observabilidad operativa, SLOs/SLAs, alerting y análisis forense de incidencias.",
           "image": "https://d1.awsstatic.com/product-marketing/CloudWatch/Logo_AmazonCloudWatch_64.0f29a8b38ddda4c03c06b2e33b260a0b7a07dca5.png"
         },
         {
           "name": "AWS CloudTrail",
-          "description": "Registra todas las acciones realizadas en tu cuenta de AWS para auditorías y cumplimiento de seguridad.",
+          "description": "Servicio que registra y almacena el historial de llamadas a la API de AWS (acciones de usuarios y servicios) para auditoría, gobernanza y análisis forense. CloudTrail es esencial para cumplimiento y para investigar cambios accidental o maliciosos en la cuenta; los logs pueden integrarse con CloudWatch Logs, S3 y soluciones SIEM.",
           "image": "https://d1.awsstatic.com/product-marketing/CloudTrail/Logo_AWSCloudTrail_64.4b27df7de7d9cb36af5d9d48d3c053a0dd9d6a78.png"
         },
         {
           "name": "AWS Config",
-          "description": "Permite evaluar, auditar y monitorear la configuración de los recursos AWS a lo largo del tiempo.",
+          "description": "Servicio que evalúa, registra y audita la configuración de los recursos AWS a lo largo del tiempo. Permite definir reglas de conformidad, recibir snapshots del estado de recursos y facilitar investigaciones de configuración y cumplimiento regulatorio. Es valioso para gobernanza multi-cuenta y para automatizar remediaciones mediante Lambda o Systems Manager.",
           "image": "https://d1.awsstatic.com/product-marketing/Config/Logo_AWSConfig_64.31a52061a9d83bdb8478b4a60f4b9e1d13e63e87.png"
         }
       ]
-    }
+    },
+  {
+    "name": "Machine Learning",
+    "services": [
+      {
+        "name": "Amazon SageMaker",
+        "description": "Servicio totalmente administrado para construir, entrenar y desplegar modelos de machine learning a escala. Proporciona entornos gestionados de notebooks, algoritmos optimizados, pipelines de ML, endpoints de inferencia y capacidades de MLOps integradas. Reduce tiempo de desarrollo y elimina la gestión de infraestructura para entrenar modelos complejos. Ideal para equipos de ciencia de datos, automatización ML y aplicaciones con inferencia en tiempo real.",
+        "image": "https://d1.awsstatic.com/product-marketing/SageMaker/Logo_AmazonSageMaker_64.png"
+      },
+      {
+        "name": "Amazon Rekognition",
+        "description": "Servicio basado en visión por computadora que analiza imágenes y videos usando modelos preentrenados. Detecta objetos, personas, texto, celebridades, caras y emociones. Útil para moderación de contenido, análisis de videos, control de identidad y automatización en sistemas de seguridad. No requiere conocimientos de ML, ya que ofrece APIs listas para usarse.",
+        "image": "https://d1.awsstatic.com/product-marketing/Rekognition/Logo_AmazonRekognition_64.png"
+      },
+      {
+        "name": "Amazon Comprehend",
+        "description": "Servicio de procesamiento de lenguaje natural (NLP) que identifica sentimientos, temas, entidades, frases clave y clasifica texto. Usa modelos preentrenados y permite entrenar clasificadores personalizados. Casos de uso: análisis de comentarios de clientes, minería de texto, automatización de procesos legales o de soporte y extracción de insights no estructurados.",
+        "image": "https://d1.awsstatic.com/product-marketing/Comprehend/Logo_AmazonComprehend_64.png"
+      }
+    ]
+  },
+  {
+    "name": "Analítica",
+    "services": [
+      {
+        "name": "Amazon Athena",
+        "description": "Servicio serverless que permite ejecutar consultas SQL directamente sobre datos almacenados en S3. No requiere infraestructura ni administración, y cobra por cantidad de datos escaneados. Ideal para análisis ad-hoc, data lakes y exploración rápida de datos. Se integra con Glue Data Catalog para manejo de esquema y metadatos.",
+        "image": "https://d1.awsstatic.com/product-marketing/athena/Logo_AmazonAthena_64.png"
+      },
+      {
+        "name": "Amazon Kinesis",
+        "description": "Plataforma para procesamiento y análisis de datos en streaming en tiempo real. Permite ingerir logs, eventos, métricas, clics, IoT y streaming de video. Ofrece Kinesis Data Streams, Firehose, Analytics y Video Streams. Casos de uso: monitoreo en tiempo real, dashboards de eventos, análisis de logs, y pipelines de datos en vivo.",
+        "image": "https://d1.awsstatic.com/product-marketing/Kinesis/Logo_AmazonKinesis_64.png"
+      },
+      {
+        "name": "AWS Glue",
+        "description": "Servicio administrado de ETL, catalogación y preparación de datos. Automatiza la detección de esquemas, transformación y movimiento de datos entre sistemas. Glue permite construir data lakes organizados y consultables. Incluye Glue Studio para flujos visuales, Glue Jobs para ETL y Glue Crawlers para catalogación automática.",
+        "image": "https://d1.awsstatic.com/product-marketing/Glue/Logo_AWSGlue_64.png"
+      }
+    ]
+  },
+  {
+    "name": "Migración y Transferencia",
+    "services": [
+      {
+        "name": "AWS Migration Hub",
+        "description": "Panel centralizado para monitorizar y gestionar migraciones hacia AWS. Permite ver progreso de aplicaciones migradas usando múltiples herramientas como DMS o Server Migration Service. Ayuda a coordinar equipos, medir tiempos y centralizar el estado de migración empresarial.",
+        "image": "https://d1.awsstatic.com/product-marketing/Migration%20Hub/Logo_AWSMigrationHub_64.png"
+      },
+      {
+        "name": "AWS Database Migration Service (DMS)",
+        "description": "Servicio para migrar bases de datos hacia AWS con mínima interrupción. Soporta migraciones homogéneas (ej. MySQL ➜ MySQL) y heterogéneas (ej. Oracle ➜ Aurora). Ofrece replicación continua para mantener origen y destino sincronizados. Ideal para migraciones grandes sin downtime.",
+        "image": "https://d1.awsstatic.com/product-marketing/DMS/Logo_AWSDMS_64.png"
+      },
+      {
+        "name": "AWS Snowball",
+        "description": "Dispositivo físico seguro para transferencias masivas de datos hacia/desde AWS. Se utiliza cuando la transferencia por red sería muy lenta o costosa. Snowball ofrece almacenamiento local cifrado y transporte seguro. Es ideal para TB o PB de datos, proyectos remotos y migraciones a data lakes en AWS.",
+        "image": "https://d1.awsstatic.com/product-marketing/Snowball/Logo_AWSSnowball_64.png"
+      }
+    ]
+  },
+  {
+    "name": "Internet of Things (IoT)",
+    "services": [
+      {
+        "name": "AWS IoT Core",
+        "description": "Servicio para conectar dispositivos IoT a la nube de forma segura usando MQTT, HTTP o WebSockets. Administra autenticación, autorización, comunicación y routing de mensajes. Ideal para dispositivos inteligentes, sensores industriales y aplicaciones conectadas.",
+        "image": "https://d1.awsstatic.com/product-marketing/iot-core/Logo_AWSIoTCore_64.png"
+      },
+      {
+        "name": "AWS IoT Analytics",
+        "description": "Servicio que procesa, limpia y analiza datos generados por dispositivos IoT. Ofrece pipelines de datos, almacenamiento optimizado y consultas preparadas para análisis. Útil para identificar patrones de uso, mantenimiento predictivo e integración con ML.",
+        "image": "https://d1.awsstatic.com/product-marketing/IoT%20Analytics/Logo_AWSIoTAnalytics_64.png"
+      },
+      {
+        "name": "AWS IoT Greengrass",
+        "description": "Extiende AWS a dispositivos edge para ejecutar código, sincronizar datos y comunicarse localmente sin depender siempre de la nube. Permite lógica local, ML en el borde y comunicación segura. Es ideal para entornos con conectividad intermitente.",
+        "image": "https://d1.awsstatic.com/product-marketing/Greengrass/Logo_AWSIoTGreengrass_64.png"
+      }
+    ]
+  },
+  {
+    "name": "Seguridad adicional",
+    "services": [
+      {
+        "name": "Amazon GuardDuty",
+        "description": "Servicio de detección de amenazas basado en machine learning que analiza logs de VPC, CloudTrail y DNS para identificar comportamientos sospechosos. Detecta actividad maliciosa, accesos anómalos y patrones que indican compromiso. No requiere instalar agentes.",
+        "image": "https://d1.awsstatic.com/product-marketing/GuardDuty/Logo_AmazonGuardDuty_64.png"
+      },
+      {
+        "name": "AWS Secrets Manager",
+        "description": "Servicio para gestionar, almacenar y rotar automáticamente secretos como contraseñas, llaves API y credenciales de bases de datos. Se integra con RDS, Lambda y otros servicios. Reduce riesgos al evitar almacenar secretos en código.",
+        "image": "https://d1.awsstatic.com/product-marketing/Secrets%20Manager/Logo_AWSSecretsManager_64.png"
+      },
+      {
+        "name": "AWS Security Hub",
+        "description": "Servicio que centraliza alertas de seguridad desde múltiples servicios (GuardDuty, Inspector, Macie, etc.) y permite evaluar cumplimiento normativo. Proporciona vistas unificadas y recomendaciones automatizadas para mejorar la postura de seguridad.",
+        "image": "https://d1.awsstatic.com/product-marketing/Security%20Hub/Logo_AWSSecurityHub_64.png"
+      }
+    ]
+  },
+  {
+    "name": "DevOps",
+    "services": [
+      {
+        "name": "AWS CodePipeline",
+        "description": "Servicio para implementar pipelines CI/CD que automatizan compilación, pruebas y despliegues. Se integra con GitHub, CodeBuild, CodeDeploy y otros proveedores. Permite entregas rápidas y consistentes con menos intervención manual.",
+        "image": "https://d1.awsstatic.com/product-marketing/CodePipeline/Logo_AWSCodePipeline_64.png"
+      },
+      {
+        "name": "AWS CodeBuild",
+        "description": "Servicio totalmente administrado que compila código, ejecuta tests y produce artefactos listos para despliegue. Escala automáticamente y cobra por minuto de construcción. Reemplaza servidores de build locales.",
+        "image": "https://d1.awsstatic.com/product-marketing/CodeBuild/Logo_AWSCodeBuild_64.png"
+      },
+      {
+        "name": "AWS CodeDeploy",
+        "description": "Automatiza despliegues en EC2, contenedores, Lambda y servidores on-premise. Permite despliegues blue/green, canary y rolling, reduciendo riesgos y downtime. Se integra con CodePipeline y herramientas de DevOps.",
+        "image": "https://d1.awsstatic.com/product-marketing/CodeDeploy/Logo_AWSCodeDeploy_64.png"
+      }
+    ]
+  },
+  {
+    "name": "Mensajería",
+    "services": [
+      {
+        "name": "Amazon SNS",
+        "description": "Servicio de mensajería tipo pub/sub para enviar notificaciones a múltiples suscriptores (email, SMS, Lambda, SQS, HTTPS). Ideal para eventos inmediatos, alertas y fan-out patterns. Administra comunicación desacoplada.",
+        "image": "https://d1.awsstatic.com/product-marketing/SNS/Logo_AmazonSNS_64.png"
+      },
+      {
+        "name": "Amazon SQS",
+        "description": "Servicio de colas que desacopla sistemas distribuidos permitiendo enviar, almacenar y recibir mensajes de forma segura. Ofrece colas estándar (alto throughput) y FIFO (orden estricto). Ideal para microservicios y procesamiento asíncrono.",
+        "image": "https://d1.awsstatic.com/product-marketing/SQS/Logo_AmazonSQS_64.png"
+      },
+      {
+        "name": "Amazon EventBridge",
+        "description": "Bus de eventos serverless que permite conectar aplicaciones utilizando eventos en tiempo real. Facilita integrar SaaS externos con AWS. Ideal para arquitecturas event-driven y automatizaciones complejas.",
+        "image": "https://d1.awsstatic.com/product-marketing/EventBridge/Logo_AmazonEventBridge_64.png"
+      }
+    ]
+  },
+  {
+    "name": "Administración y Gobernanza",
+    "services": [
+      {
+        "name": "AWS Organizations",
+        "description": "Servicio para gestionar múltiples cuentas AWS desde un punto central. Permite aplicar políticas (SCPs), consolidar facturación, segmentar ambientes y aplicar controles de seguridad consistentes. Fundamental para empresas y grandes equipos.",
+        "image": "https://d1.awsstatic.com/product-marketing/Organizations/Logo_AWSOrganizations_64.png"
+      },
+      {
+        "name": "AWS Control Tower",
+        "description": "Crea un entorno multi-cuenta seguro, gobernado y listo para usarse basado en buenas prácticas de AWS. Automatiza la creación de cuentas, setup de seguridad, logs centralizados y políticas de control. Ideal para empresas que comienzan en AWS o expanden su organización.",
+        "image": "https://d1.awsstatic.com/product-marketing/Control%20Tower/Logo_AWSControlTower_64.png"
+      },
+      {
+        "name": "AWS License Manager",
+        "description": "Permite gestionar licencias de software en AWS y entornos híbridos, reduciendo sobrecostos y riesgos de cumplimiento. Automatiza seguimiento de uso, asignación y restricciones de licencias.",
+        "image": "https://d1.awsstatic.com/product-marketing/License%20Manager/Logo_AWSLicenseManager_64.png"
+      }
+    ]
+  },
+  {
+    "name": "Aplicaciones empresariales",
+    "services": [
+      {
+        "name": "Amazon WorkSpaces",
+        "description": "Servicio de escritorios virtuales en la nube que permite ofrecer entornos Windows o Linux administrados, seguros y escalables. Ideal para teletrabajo, call centers y empresas con requisitos de acceso remoto.",
+        "image": "https://d1.awsstatic.com/product-marketing/Workspaces/Logo_AmazonWorkSpaces_64.png"
+      },
+      {
+        "name": "Amazon Chime",
+        "description": "Plataforma de videoconferencias, chat y reuniones empresariales. Ofrece API para integrar comunicaciones en aplicaciones propias. Ideal para colaboración remota dentro de organizaciones.",
+        "image": "https://d1.awsstatic.com/product-marketing/Chime/Logo_AmazonChime_64.png"
+      },
+      {
+        "name": "Amazon WorkMail",
+        "description": "Servicio de correo empresarial seguro y manejado por AWS. Proporciona calendarios, integración con Outlook y políticas administradas mediante AWS. Enfocado en organizaciones que requieren control y seguridad reforzada.",
+        "image": "https://d1.awsstatic.com/product-marketing/WorkMail/Logo_AmazonWorkMail_64.png"
+      }
+    ]
+  }
   ]
 }
