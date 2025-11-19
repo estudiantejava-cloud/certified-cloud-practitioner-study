@@ -5,28 +5,28 @@
       "services": [
         {
           "name": "Amazon EC2 (Elastic Compute Cloud)",
-          "description": "Servicio que permite ejecutar máquinas virtuales (instancias) en la nube con capacidad de cómputo escalable bajo demanda. Soporta múltiples familias de instancias (general purpose, compute/memory optimized, GPU, etc.), escalado manual o automático con Auto Scaling, y distintos modelos de compra (On-Demand, Reserved, Spot). Casos de uso: servidores web, aplicaciones empresariales, procesamiento por lotes y entornos de desarrollo/testing. Factores a considerar: selección de tipo de instancia, almacenamiento EBS y diseño de alta disponibilidad en múltiples AZ.",
-          "image": "https://d1.awsstatic.com/logos/aws_logo_smile_1200x630.15d9402b85e3b4ae6e3c2c6f5d2bbf49b5d8a0b2.png"
+          "description": "Amazon Elastic Compute Cloud (Amazon EC2) proporciona capacidad de computación escalable bajo demanda en la nube de Amazon Web Services (AWS). El uso de Amazon EC2 reduce los costos de hardware para que pueda desarrollar e implementar aplicaciones con mayor rapidez. Puede usar Amazon EC2 para lanzar tantos servidores virtuales como necesite, configurar la seguridad y las redes, y administrar el almacenamiento. Puede agregar capacidad (escalar verticalmente) para gestionar tareas que requieren mucha computación, como los procesos mensuales o anuales, o los picos de tráfico del sitio web. Cuando el uso disminuye, puede volver a reducir la capacidad (reducir verticalmente).<br><br>Una instancia de EC2 es un servidor virtual en la nube de AWS. Cuando inicia una instancia de EC2, el tipo de instancia que especifica determina el hardware disponible para la instancia. Cada tipo de instancia ofrece una combinación diferente de recursos de computación, memoria, red y almacenamiento. Para obtener más información, consulte la Guía de tipos de instancia de Amazon EC2.",
+          "image": "imagen/AWS-EC2.png"
         },
         {
           "name": "AWS Lambda",
-          "description": "Plataforma serverless para ejecutar funciones en respuesta a eventos sin gestionar servidores. Cobras por número de solicitudes y duración (GB-segundos) y permite integraciones nativas con muchos servicios AWS (S3, API Gateway, DynamoDB, EventBridge, etc.). Ideal para microservicios, procesamiento de datos en tiempo real, tareas programadas y backend de APIs. Ventaja: eliminas la administración de infra, escalado automático y menor coste para cargas intermitentes; considera límites de duración y aspectos de cold start para cargas latentes sensibles.",
-          "image": "https://d1.awsstatic.com/product-marketing/Lambda/Logo_AWSLambda_64.7ad42f3a9a56c1dd9bb35f2f8a0f28d15d03bfc6.png"
+          "description": "AWS Lambda es un servicio de computación que ejecuta código sin necesidad de administrar servidores. Tu código se ejecuta, escalándose automáticamente según sea necesario, con un modelo de pago por uso<br><br>Puedes usar Lambda para:<ul><b> - Procesamiento de flujos</b>: Procese flujos de datos en tiempo real para análisis y monitorización. Consulte Kinesis Data Streams para obtener más información. </ul><ul><b> - Aplicaciones web</b>: Cree aplicaciones web escalables que se ajusten automáticamente a la demanda.</ul><ul><b> - Backends móviles</b>: Crea backends de API seguros para aplicaciones móviles y web.</ul><ul><b> - Backends de IoT</b>: Gestionan solicitudes web, móviles, de IoT y de API de terceros. Consulte la sección de IoT para obtener más información.</ul><ul><b>- Procesamiento de archivos</b> : Los archivos se procesan automáticamente al subirlos a Amazon Simple Storage Service. Consulte los ejemplos de procesamiento de archivos para obtener más información.</ul><ul><b> - Ejemplos de operaciones e integración de bases de datos</b>: Responda a los cambios en la base de datos y automatice los flujos de trabajo de datos. Consulte los ejemplos de bases de datos para obtener más detalles. </ul><ul> - <b>Tareas programadas y periódicas</b> : Ejecute operaciones automatizadas de forma regular mediante EventBridge. Consulte los ejemplos de tareas programadas para obtener más información. </ul>",
+          "image": ""
         },
         {
           "name": "Amazon ECS (Elastic Container Service)",
-          "description": "Servicio gestionado para ejecutar contenedores Docker en clústeres. Soporta dos modos: EC2 (tú administras instancias) y Fargate (serverless, sin gestionar instancias). Casos de uso: despliegue de microservicios, tareas por lotes y orquestación sencilla cuando no necesitas todo el ecosistema Kubernetes. Ventaja: integración con IAM, ALB/NLB, CloudWatch y facilidad de gestión del ciclo de vida de tareas.",
-          "image": "https://d1.awsstatic.com/product-marketing/ECS/Product-Page-Diagram_Amazon-ECS_HIW.7d3b24d44b58e5a1f729e5076a6f4c1c91915ab2.png"
+          "description": "Amazon Elastic Container Service (Amazon ECS) es un servicio de orquestación de contenedores completamente administrado que facilita la implementación, la administración y el escalado de aplicaciones en contenedores. Como servicio totalmente administrado, Amazon ECS incluye configuración y prácticas recomendadas operativas integradas de AWS. Se integra tanto con herramientas de AWS, como Amazon Elastic Container Registry, como con herramientas de terceros, como Docker. Esta integración facilita a los equipos centrarse en crear las aplicaciones, no en el entorno. Puede ejecutar y escalar las cargas de trabajo de contenedores en todas las Regiones de AWS en la nube y en las instalaciones, sin la complejidad de administrar un plano de control.",
+          "image": "imagen/AWS-ECS.png"
         },
         {
           "name": "Amazon EKS (Elastic Kubernetes Service)",
-          "description": "Servicio administrado que facilita ejecutar clústeres Kubernetes en AWS sin tener que operar el plano de control. Soporta integraciones con IAM, ALB Ingress, Fargate para pods serverless y capacidades de autoscaling. Caso de uso: cargas que requieren Kubernetes por compatibilidad o ecosistema (Helm, operadores, etc.), migraciones de on-prem a la nube usando manifiestos existentes. Ten en cuenta la gestión de versiones de Kubernetes y permisos RBAC.",
-          "image": "https://d1.awsstatic.com/product-marketing/EKS/Logo_AmazonEKS_64.671ae4c1b93e7a6cb456ba9cbdb6ce7ee511f7a3.png"
+          "description": "Amazon Elastic Kubernetes Service (EKS) es un servicio de Kubernetes completamente administrado que elimina la complejidad que supone operar clústeres de Kubernetes. Con EKS, es posible:<br><br><ul>Implementar aplicaciones más rápido y con menos sobrecarga operativa.</ul><ul>Escalar sin interrupciones para satisfacer las demandas cambiantes de las cargas de trabajo.</ul><ul>Mejorar la seguridad mediante la integración con AWS y actualizaciones automatizadas.</ul><ul>Puede elegir entre EKS estándar o el modo automático de EKS totalmente automatizado.</ul>",
+          "image": "imagen/AWS-EKS.png"
         },
         {
           "name": "AWS Elastic Beanstalk",
-          "description": "Plataforma PaaS que facilita desplegar y escalar aplicaciones web (soporta Java, .NET, Node.js, Python, Ruby, Go, PHP). Gestiona automáticamente el aprovisionamiento de EC2, balanceadores, auto scaling y despliegues mientras te permite acceder a la configuración subyacente si lo necesitas. Casos de uso: rápidamente desplegar aplicaciones sin diseñar la infraestructura; ideal para prototipos y equipos que quieren simplicidad operativa.",
-          "image": "https://d1.awsstatic.com/product-marketing/Elastic%20Beanstalk/Logo_AWSElasticBeanstalk_64.c6a31e31b404c5d4a0138e2f24d36f5361f6dc4e.png"
+          "description": "Amazon Elastic Beanstalk es un servicio de orquestación de Amazon Web Services (AWS) que simplifica la implementación, gestión y escalado de aplicaciones web en la nube. Abstrae los detalles de la infraestructura subyacente como servidores (Amazon EC2), balanceo de carga y escalado automático, permitiendo a los desarrolladores centrarse en escribir código. Es compatible con lenguajes como Java, .NET, PHP, Node.js, Python, Ruby y Docker.<br><br>Plataforma PaaS que facilita desplegar y escalar aplicaciones web (soporta Java, .NET, Node.js, Python, Ruby, Go, PHP). Gestiona automáticamente el aprovisionamiento de EC2, balanceadores, auto scaling y despliegues mientras te permite acceder a la configuración subyacente si lo necesitas. Casos de uso: rápidamente desplegar aplicaciones sin diseñar la infraestructura; ideal para prototipos y equipos que quieren simplicidad operativa. <br><br> Con Elastic Beanstalk, puede implementar aplicaciones web en la nube AWS en una variedad de plataformas compatibles. Usted crea e implementa sus aplicaciones. Elastic Beanstalk EC2 aprovisiona las instancias de Amazon, configura el equilibrio de carga, configura la supervisión del estado y escala el entorno de forma dinámica. <br><br> Además de los entornos de servidores web, Elastic Beanstalk también proporciona entornos de trabajo que puede utilizar para procesar los mensajes de una cola de Amazon SQS, útiles para tareas asíncronas o de ejecución prolongada. Para obtener más información, consulte Entornos de trabajo de Elastic Beanstalk.",
+          "image": "imagen/AWS-ElasticBeanstalk.png"
         }
       ]
     },
@@ -85,8 +85,8 @@
       "services": [
         {
           "name": "Amazon VPC (Virtual Private Cloud)",
-          "description": "Servicio que permite crear redes virtuales aisladas dentro de AWS para controlar subredes, routing, tables, gateways y reglas de seguridad (security groups y network ACLs). Es la base de la mayoría de arquitecturas en AWS: define zonas públicas/privadas, conectividad VPN/Direct Connect y segmentación de servicios. Recomendación: diseñar subredes por AZ para alta disponibilidad y aplicar principios de least privilege en reglas de red.",
-          "image": "https://d1.awsstatic.com/product-marketing/VPC/Logo_AmazonVPC_64.13f29802a2b66c5bdb0b1a6b9efc1a52481a6e7a.png"
+          "description": "Servicio que permite crear redes virtuales aisladas dentro de AWS para controlar subredes, routing, tables, gateways y reglas de seguridad (security groups y network ACLs). Es la base de la mayoría de arquitecturas en AWS: define zonas públicas/privadas, conectividad VPN/Direct Connect y segmentación de servicios. Recomendación: diseñar subredes por AZ para alta disponibilidad y aplicar principios de least privilege en reglas de red.<br><br> Con Amazon Virtual Private Cloud (Amazon VPC), puede lanzar recursos de AWS en una red virtual aislada de manera lógica que haya definido. Esta red virtual es muy similar a la red tradicional que usaría en su propio centro de datos, pero con los beneficios que supone utilizar la infraestructura escalable de AWS.<br><br> En el siguiente diagrama se muestra una VPC de ejemplo. La VPC tiene una subred en cada zona de disponibilidad de la región, instancias de EC2 en cada subred y una puerta de enlace de Internet para permitir la comunicación entre los recursos en su VPC y la Internet.",
+          "image": "imagen/AWS-VPC.png"
         },
         {
           "name": "Amazon CloudFront",
@@ -111,7 +111,7 @@
         {
           "name": "AWS Identity and Access Management (IAM)",
           "description": "Servicio para gestionar identidades (usuarios, roles, grupos) y políticas que controlan el acceso a recursos AWS. Permite políticas basadas en JSON con permisos finos, MFA, roles temporales y federation (SAML, OIDC). Es piedra angular de la seguridad en AWS: buenas prácticas incluyen least privilege, roles para servicios y revisión periódica de políticas y credenciales.",
-          "image": "https://d1.awsstatic.com/product-marketing/IAM/Logo_AWSIAM_64.0e22d67976bbf7c27ef4a0ff23f3031b2f238ba9.png"
+          "image": "imagen/AWS-IAM.JPEG"
         },
         {
           "name": "AWS Key Management Service (KMS)",
@@ -287,6 +287,21 @@
         "name": "Amazon EventBridge",
         "description": "Bus de eventos serverless que permite conectar aplicaciones utilizando eventos en tiempo real. Facilita integrar SaaS externos con AWS. Ideal para arquitecturas event-driven y automatizaciones complejas.",
         "image": "https://d1.awsstatic.com/product-marketing/EventBridge/Logo_AmazonEventBridge_64.png"
+      },
+      {
+        "name": "AWS AppSync",
+        "description": "Servicio administrado que permite crear APIs escalables usando GraphQL. Simplifica el acceso a datos desde aplicaciones móviles y web al unificar múltiples orígenes (DynamoDB, Aurora, Lambda, HTTP, etc.) bajo un único endpoint. Soporta suscripciones en tiempo real usando WebSockets, sincronización offline y cacheo automático. Ideal para apps con actualizaciones instantáneas, colaboración, dashboards y aplicaciones móviles con conectividad variable.",
+        "image": "https://d1.awsstatic.com/product-marketing/AppSync/Logo_AWSAppSync_64.png"
+      },
+      {
+        "name": "Amazon SES (Simple Email Service)",
+        "description": "Es un servicio en la nube de Amazon Web Services que permite a las empresas enviar y recibir correos electrónicos a gran escala de manera confiable y rentable. Su principal ventaja es que puede integrarse en cualquier aplicación para automatizar el envío de correos transaccionales, de marketing o notificaciones, pagando solo por el uso.<br><br>Es un servicio de envío de correos electrónicos de alta capacidad para casos de uso como marketing, notificaciones y correos transaccionales. Proporciona una interfaz SMTP, así como API, y permite gestionar la reputación, las métricas de entrega y la autenticación del correo para garantizar la eficacia de campañas masivas.",
+        "image": "imagen/AWS-SES.jpg"
+      },
+      {
+        "name": "Amazon MQ",
+        "description": "Servicio administrado para brokers de mensajes compatibles con Apache ActiveMQ y RabbitMQ. Facilita la migración de sistemas que dependen de protocolos tradicionales como MQTT, AMQP, STOMP o JMS, sin necesidad de reescribir aplicaciones. Ofrece alta disponibilidad, failover automático, monitoreo integrado y administración mínima. Ideal para entornos empresariales que requieren colas tradicionales y compatibilidad con sistemas legados.",
+        "image": "https://d1.awsstatic.com/product-marketing/MQ/Logo_AmazonMQ_64.png"
       }
     ]
   },
@@ -329,6 +344,31 @@
         "image": "https://d1.awsstatic.com/product-marketing/WorkMail/Logo_AmazonWorkMail_64.png"
       }
     ]
-  }
+  },
+  {
+    "name": "Conceptos",
+    "services": [
+      {
+        "name": "Modelo de responsabilidad compartida",
+        "description": "El modelo de responsabilidad compartida en AWS divide las responsabilidades de seguridad entre AWS y el cliente. AWS es responsable de la seguridad <b>de la nube</b>, que incluye la infraestructura física como los centros de datos y el hardware. El cliente es responsable de la seguridad <b>en la nube</b>, que abarca la seguridad de sus datos, aplicaciones y la configuración de los servicios que utilizan, como la gestión de acceso y cifrado. ",
+        "image": "imagen/AWS-MRC.png"
+      },
+      {
+        "name": "Elasticidad",
+        "description": "La elasticidad en AWS es la capacidad de adquirir y liberar recursos informáticos (como servidores o bases de datos) automáticamente en respuesta a la demanda, lo que permite que las aplicaciones se ajusten a las fluctuaciones de carga. A diferencia de la escalabilidad, la elasticidad permite tanto aumentar como disminuir recursos de forma dinámica, asegurando el rendimiento sin pagar por capacidad de cómputo no utilizada. Servicios como AWS Auto Scaling Groups y AWS Lambda utilizan la elasticidad para ajustar automáticamente los recursos. <br><br><b>Conceptos clave:</b><ul>- Vertical: Se incrementan las capacidades de un recurso existente, por ejemplo, pasando de una instancia T2 micro a una T3 large, aunque esto a menudo requiere apagar la instancia y no se puede hacer de forma tan dinámica como el escalamiento horizontal.</ul><ul>- Horizontal: Se añaden o eliminan instancias de servidores, como lo hacen los grupos de Auto Scaling.</ul>",
+        "image": ""
+      },
+      {
+        "name": "Escalabilidad",
+        "description": "La Escalabilidad, es la capacidad de un sistema de crecer y adaptarse a las necesidades de los usuarios. Habitualmente, la escalabilidad sevincula al crecimiento de los recursos de un sistema ante un incremento en la demanda de los mismos, evitando la saturación. <br><br><ul>- El Escalamiento Vertical consiste en agregar recursos a un sólo nodo, aumentando su capacidad, esto puede ser aumentando la memoria RAM del servidor, agregar discos duros de mayor capacidad, cambiar de CPU o incluso cambiar todo el servidor por uno de más capacidad</ul><ul>- El Escalamiento Horizontal consiste en agregar nodos adicionales para adaptarse a la carga de trabajo. Si la aplicación o el sistema están llegando a su punto crítico, entonces se agregan nodos adicionales y se divide la carga entre los distintos nodos</ul>",
+        "image": "imagen/AWS-ESCALAMIENTOHV.png"
+      },
+      {
+        "name": "EscalPrincipio de privilegio mínimoabilidad",
+        "description": "El Principio de privilegio mínimo, es una práctica recomendada en la seguridad informática que establece que a las identidades (usuarios, grupos, roles) solo se les debe permitir realizar el menor conjunto de acciones necesarias para completar una tarea específica. Esto ayuda a limitar el acceso involuntario y a realizar el seguimiento de quién tiene acceso a determinados recursos.",
+        "image": ""
+      }
+    ]
+  }  
   ]
 }
