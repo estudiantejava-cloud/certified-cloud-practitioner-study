@@ -1,9 +1,10 @@
+<!-- Versión inicial de HTML con categorías colapsables (responsive) -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Glosario AWS - Cloud Practitioner</title>
+  <title>Glosario AWS - Categorías Responsivas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,21 +17,29 @@
 
   <main class="container my-4">
 
-    <!-- Barra superior -->
+    <div id="categoriesContainer">
+
+    <!-- Selector de categorías (responsive) -->
+    <div class="mb-4">
+      <label class="form-label fw-bold">Selecciona una categoría:</label>
+      <select id="categorySelect" class="form-select">
+        <option value="all">Todas las categorías</option>
+      </select>
+    </div>
+
+    <!-- Buscador -->
     <div class="d-flex justify-content-between align-items-center mb-3">
       <input type="text" id="searchInput" class="form-control w-75" placeholder="🔍 Buscar servicio AWS...">
       <button id="toggleMode" class="btn btn-dark ms-3">🌙 Modo oscuro</button>
     </div>
 
     <!-- Contenedor del glosario -->
-    <div id="awsGlossary">
-      <!-- Aquí se cargan las categorías y servicios desde JSON -->
-    </div>
+    <div id="awsGlossary"></div>
 
   </main>
 
   <footer class="text-center text-muted py-3">
-    <small>Hecho con ☁️ y ☕ por Cristian — Estudio AWS Cloud Practitioner</small>
+    <small>Hecho con ☁️ y ☕</small>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -39,41 +48,57 @@
     const glossaryContainer = document.getElementById('awsGlossary');
     const searchInput = document.getElementById('searchInput');
     const toggleModeBtn = document.getElementById('toggleMode');
+    const categorySelect = document.getElementById('categorySelect');
     const body = document.body;
     let allData = [];
 
-    // 🌙 Alternar modo oscuro
+    // Modo oscuro
     toggleModeBtn.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       toggleModeBtn.textContent = body.classList.contains('dark-mode') ? '☀️ Modo claro' : '🌙 Modo oscuro';
     });
 
-    // 📖 Cargar datos desde JSON
+    // Cargar JSON
     fetch('servicios.json')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
         allData = data.categories;
+        loadCategoryOptions();
         renderCategories(allData);
       })
-      .catch(error => {
-        glossaryContainer.innerHTML = '<p class="text-danger">Error cargando servicios.json</p>';
-        console.error(error);
-      });
+      .catch(() => glossaryContainer.innerHTML = '<p class="text-danger">Error cargando servicios.json</p>');
 
-    // 🧩 Renderizar categorías y servicios
+    // Cargar selector de categorías
+    function loadCategoryOptions() {
+      allData.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat.name;
+        opt.textContent = cat.name;
+        categorySelect.appendChild(opt);
+      });
+    }
+
+    // Renderizar categorías
     function renderCategories(categories) {
       glossaryContainer.innerHTML = '';
 
       categories.forEach((category, catIndex) => {
         const categoryBlock = document.createElement('div');
 
-        // Título de la categoría
-        const title = document.createElement('h3');
-        title.classList.add('category-title');
-        title.textContent = category.name;
-        categoryBlock.appendChild(title);
+        // Título colapsable de categoría
+        const categoryHeader = document.createElement('button');
+        categoryHeader.classList.add('btn', 'btn-warning', 'w-100', 'text-start', 'mb-2', 'fw-bold', 'text-white');
+        categoryHeader.setAttribute('data-bs-toggle', 'collapse');
+        categoryHeader.setAttribute('data-bs-target', `#cat${catIndex}`);
+        categoryHeader.textContent = category.name;
+        categoryBlock.appendChild(categoryHeader);
 
-        // Contenedor de servicios (accordion)
+        // Contenido interno
+        const collapseDiv = document.createElement('div');
+        collapseDiv.id = `cat${catIndex}`;
+        collapseDiv.classList.add('collapse');
+        collapseDiv.setAttribute('data-bs-parent', '#categoriesContainer');
+
         const accordion = document.createElement('div');
         accordion.classList.add('accordion');
         accordion.id = `accordion${catIndex}`;
@@ -82,34 +107,45 @@
           const id = `cat${catIndex}serv${index}`;
           const card = document.createElement('div');
           card.classList.add('accordion-item', 'aws-card');
+
           card.innerHTML = `
             <h2 class="accordion-header" id="heading${id}">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${id}" aria-expanded="false" aria-controls="collapse${id}">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${id}" aria-expanded="false">
                 ${service.name}
               </button>
             </h2>
-            <div id="collapse${id}" class="accordion-collapse collapse" aria-labelledby="heading${id}" data-bs-parent="#accordion${catIndex}">
+            <div id="collapse${id}" class="accordion-collapse collapse" data-bs-parent="#accordion${catIndex}">
               <div class="accordion-body">
                 <p>${service.description}</p>
-                ${service.image ? `<img src="${service.image}" alt="${service.name}" class="aws-img">` : ''}
+                ${service.image ? `<img src="${service.image}" class="aws-img">` : ''}
               </div>
-            </div>
-          `;
+            </div>`;
+
           accordion.appendChild(card);
         });
 
-        categoryBlock.appendChild(accordion);
+        collapseDiv.appendChild(accordion);
+        categoryBlock.appendChild(collapseDiv);
         glossaryContainer.appendChild(categoryBlock);
       });
     }
 
-    // 🔍 Búsqueda de servicios
-    searchInput.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      if (!term) {
+    // Filtrar por categoría
+    categorySelect.addEventListener('change', () => {
+      const selected = categorySelect.value;
+
+      if (selected === 'all') {
         renderCategories(allData);
         return;
       }
+
+      const filtered = allData.filter(cat => cat.name === selected);
+      renderCategories(filtered);
+    });
+
+    // Buscar por nombre
+    searchInput.addEventListener('input', e => {
+      const term = e.target.value.toLowerCase();
 
       const filteredCategories = allData
         .map(cat => ({
