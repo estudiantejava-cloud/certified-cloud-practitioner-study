@@ -10,7 +10,7 @@
         },
         {
           "name": "AWS Lambda",
-          "description": "AWS Lambda es un servicio de computación que ejecuta código sin necesidad de administrar servidores. Tu código se ejecuta, escalándose automáticamente según sea necesario, con un modelo de pago por uso<br><br>Puedes usar Lambda para:<ul><b> - Procesamiento de flujos</b>: Procese flujos de datos en tiempo real para análisis y monitorización. Consulte Kinesis Data Streams para obtener más información. </ul><ul><b> - Aplicaciones web</b>: Cree aplicaciones web escalables que se ajusten automáticamente a la demanda.</ul><ul><b> - Backends móviles</b>: Crea backends de API seguros para aplicaciones móviles y web.</ul><ul><b> - Backends de IoT</b>: Gestionan solicitudes web, móviles, de IoT y de API de terceros. Consulte la sección de IoT para obtener más información.</ul><ul><b>- Procesamiento de archivos</b> : Los archivos se procesan automáticamente al subirlos a Amazon Simple Storage Service. Consulte los ejemplos de procesamiento de archivos para obtener más información.</ul><ul><b> - Ejemplos de operaciones e integración de bases de datos</b>: Responda a los cambios en la base de datos y automatice los flujos de trabajo de datos. Consulte los ejemplos de bases de datos para obtener más detalles. </ul><ul> - <b>Tareas programadas y periódicas</b> : Ejecute operaciones automatizadas de forma regular mediante EventBridge. Consulte los ejemplos de tareas programadas para obtener más información. </ul>",
+          "description": "AWS Lambda es un servicio de computación que ejecuta código sin necesidad de administrar servidores. Tu código se ejecuta, escalándose automáticamente según sea necesario, con un modelo de pago por uso.<br><br>Puedes usar Lambda para:<ul><b> - Procesamiento de flujos</b>: Procese flujos de datos en tiempo real para análisis y monitorización. Consulte Kinesis Data Streams para obtener más información. </ul><ul><b> - Aplicaciones web</b>: Cree aplicaciones web escalables que se ajusten automáticamente a la demanda.</ul><ul><b> - Backends móviles</b>: Crea backends de API seguros para aplicaciones móviles y web.</ul><ul><b> - Backends de IoT</b>: Gestionan solicitudes web, móviles, de IoT y de API de terceros. Consulte la sección de IoT para obtener más información.</ul><ul><b>- Procesamiento de archivos</b> : Los archivos se procesan automáticamente al subirlos a Amazon Simple Storage Service. Consulte los ejemplos de procesamiento de archivos para obtener más información.</ul><ul><b> - Ejemplos de operaciones e integración de bases de datos</b>: Responda a los cambios en la base de datos y automatice los flujos de trabajo de datos. Consulte los ejemplos de bases de datos para obtener más detalles. </ul><ul> - <b>Tareas programadas y periódicas</b> : Ejecute operaciones automatizadas de forma regular mediante EventBridge. Consulte los ejemplos de tareas programadas para obtener más información. </ul>",
           "image": ""
         },
         {
@@ -52,6 +52,16 @@
           "name": "AWS Backup",
           "description": "Servicio centralizado para automatizar políticas de backup, retención y restauración a través de múltiples servicios AWS (EBS, RDS, DynamoDB, EFS, Storage Gateway, etc.). Permite definir planes de copia, aplicar etiquetas y auditar cumplimiento, lo que facilita la gobernanza de copias de seguridad en entornos grandes. Es útil para cumplimiento y recuperación ante desastres (DR).",
           "image": "https://d1.awsstatic.com/product-marketing/Backup/Logo_AWSBackup_64.3e6d95f03e97e5c8ab7e287c6df2efdc070ddf5c.png"
+        },
+        {
+          "name": "Amazon S3 Glacier",
+          "description": "Clase de almacenamiento de Amazon S3 diseñada para archivado de datos a largo plazo a un costo muy bajo, con tiempos de recuperación que van desde minutos hasta horas. Ideal para backups, datos regulatorios, logs históricos y contenido que rara vez se accede. Permite políticas de ciclo de vida para mover datos automáticamente desde S3 Standard a Glacier.",
+          "image": ""
+        },
+        {
+          "name": "Amazon S3 Glacier Deep Archive",
+          "description": "La clase de almacenamiento más económica dentro de S3, diseñada para archivado a muy largo plazo con tiempos de recuperación en horas. Pensada para datos que deben conservarse por requisitos legales, históricos o de cumplimiento, pero que se acceden muy poco (quizás una vez al año o menos). Es la alternativa más barata para almacenamiento en la nube.",
+          "image": "https://d1.awsstatic.com/product-marketing/S3/Logo_AmazonS3GlacierDeepArchive_64.png"
         }
       ]
     },
@@ -90,7 +100,7 @@
         },
         {
           "name": "Amazon CloudFront",
-          "description": "CDN (Content Delivery Network) que cachea contenido en edge locations globales para reducir latencia y mejorar la entrega de sitios web, APIs y medios. Soporta integración con S3, ALB y funciones edge (Lambda@Edge / CloudFront Functions) para personalización. Casos de uso: sitios web internacionales, streaming y APIs con usuarios distribuidos geográficamente.",
+          "description": "Amazon CloudFront es un servicio rápido de red de entrega de contenido (CDN) que distribuye datos, vídeos, aplicaciones y API a clientes de todo el mundo de forma segura, con baja latencia, altas velocidades de transferencia y dentro de un entorno intuitivo para desarrolladores. Amazon CloudFront utiliza una red global de ubicaciones de borde y cachés de borde regional que guarda en la caché copias de su contenido cerca de los espectadores. <br>CDN (Content Delivery Network) que cachea contenido en edge locations globales para reducir latencia y mejorar la entrega de sitios web, APIs y medios. Soporta integración con S3, ALB y funciones edge (Lambda@Edge / CloudFront Functions) para personalización. Casos de uso: sitios web internacionales, streaming y APIs con usuarios distribuidos geográficamente. <br><br>Amazon CloudFront garantiza que las solicitudes del usuario final se entregan desde la ubicación de borde más próxima. El resultado es que las solicitudes del espectador recorren una distancia corta, lo que mejora el rendimiento que se ofrece a los espectadores. En el caso de archivos que no están guardados en la caché en las ubicaciones de borde y las cachés de borde regional, Amazon CloudFront mantiene conexiones persistentes con los servidores de origen para poder recopilar esos archivos de los servidores de origen a la mayor brevedad posible.",
           "image": "https://d1.awsstatic.com/product-marketing/CloudFront/Logo_AmazonCloudFront_64.7646e0d3d8c51b92398b9b7e5b06ccdbcc4576de.png"
         },
         {
@@ -102,6 +112,11 @@
           "name": "AWS Route 53",
           "description": "Servicio DNS escalable y altamente disponible que soporta resolución pública y privada, routing policies (simple, weighted, latency, failover, geolocation) y health checks. Se integra con otros servicios AWS para automatizar mapeos y soporta gestión de dominios. Casos de uso: gestión de tráfico global, failover entre regiones y balanceo DNS avanzado.",
           "image": "https://d1.awsstatic.com/product-marketing/Route53/Logo_AmazonRoute53_64.3d90e1b08e238704f6fd1a343b90274b8e8fae93.png"
+        },
+        {
+          "name": "AWS Global Accelerator",
+          "description": "Servicio que optimiza el rendimiento y disponibilidad del tráfico global hacia aplicaciones distribuidas. Utiliza la red global de AWS para enrutar tráfico mediante dos direcciones IP estáticas, mejorando la latencia y ofreciendo failover instantáneo entre regiones o endpoints. Es ideal para aplicaciones con usuarios globales, tiempo crítico o requerimientos de alta resiliencia.",
+          "image": "https://d1.awsstatic.com/product-marketing/Global%20Accelerator/Logo_AWSGlobalAccelerator_64.png"
         }
       ]
     },
@@ -127,6 +142,11 @@
           "name": "AWS WAF (Web Application Firewall)",
           "description": "Firewall para aplicaciones web que permite definir reglas para bloquear, permitir o contar solicitudes HTTP(S) basadas en IP, patrones, strings o condiciones complejas. Útil para mitigar inyección SQL, XSS y otras vulnerabilidades a nivel de aplicación; puede desplegarse frente a CloudFront, ALB o API Gateway y se configura con managed rules o reglas personalizadas.",
           "image": "https://d1.awsstatic.com/product-marketing/WAF/Logo_AWSWAF_64.9a6f1d3b402a287f91dd6d8f3b7b0a55e5ff8a02.png"
+        },
+        {
+          "name": "AWS Certificate Manager (ACM)",
+          "description": "Servicio que facilita la creación, administración y renovación automática de certificados SSL/TLS para sitios web y aplicaciones. ACM elimina la necesidad de realizar instalaciones manuales y reduce el riesgo de expiración accidental. Se integra nativamente con servicios como CloudFront, Elastic Load Balancing y API Gateway. Ideal para cifrar tráfico HTTPS, asegurar comunicaciones y cumplir buenas prácticas de seguridad sin esfuerzo operativo.",
+          "image": ""
         }
       ]
     },
@@ -364,7 +384,7 @@
         "image": "imagen/AWS-ESCALAMIENTOHV.png"
       },
       {
-        "name": "EscalPrincipio de privilegio mínimoabilidad",
+        "name": "Principio de privilegio mínimo",
         "description": "El Principio de privilegio mínimo, es una práctica recomendada en la seguridad informática que establece que a las identidades (usuarios, grupos, roles) solo se les debe permitir realizar el menor conjunto de acciones necesarias para completar una tarea específica. Esto ayuda a limitar el acceso involuntario y a realizar el seguimiento de quién tiene acceso a determinados recursos.",
         "image": ""
       }

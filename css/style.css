@@ -1,0 +1,87 @@
+/* === Estilos Generales === */
+body {
+  background-color: var(--bs-body-bg);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.aws-header {
+  background: linear-gradient(90deg, #232f3e, #ff9900);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-text{
+  color: #0073BB !important;
+}
+.aws-card {
+  margin-bottom: 1rem;
+  border-left: 5px solid #ff9900;
+  transition: transform 0.2s;
+}
+
+.aws-card:hover {
+  transform: scale(1.01);
+}
+
+.aws-img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* === Categorías === */
+.category-title {
+  background-color: #cabfaf;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* === Modo oscuro === */
+.dark-mode {
+  background-color: #1b1f23 !important;
+  color: #e6edf3 !important;
+}
+
+.dark-mode .aws-header {
+  background: linear-gradient(90deg, #0d1117, #ff9900);
+}
+
+.dark-mode .category-title {
+  background-color: #ffb84d;
+  color: #0d1117;
+}
+
+.dark-mode .accordion-button {
+  background-color: #232f3e;
+  color: #e6edf3;
+}
+
+.dark-mode .accordion-button:not(.collapsed) {
+  background-color: #2f3b47;
+  color: #ffb84d;
+}
+
+.dark-mode .accordion-body {
+  background-color: #232f3e;
+  color: #e6edf3;
+}
+
+.dark-mode .btn-dark {
+  background-color: #ffb84d;
+  color: #0d1117;
+  border: none;
+}
+
+.dark-mode .btn-dark:hover {
+  background-color: #ffc266;
+  color: #0d1117;
+}

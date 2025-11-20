@@ -52,7 +52,7 @@ function renderCategories(categories) {
       'text-start',
       'mb-2',
       'fw-bold',
-      'text-white'
+      'text-black'
     );
     categoryHeader.setAttribute('data-bs-toggle', 'collapse');
     categoryHeader.setAttribute('data-bs-target', `#cat${catIndex}`);
