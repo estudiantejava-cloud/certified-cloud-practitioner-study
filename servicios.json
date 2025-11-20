@@ -117,7 +117,12 @@
           "name": "AWS Global Accelerator",
           "description": "Servicio que optimiza el rendimiento y disponibilidad del tráfico global hacia aplicaciones distribuidas. Utiliza la red global de AWS para enrutar tráfico mediante dos direcciones IP estáticas, mejorando la latencia y ofreciendo failover instantáneo entre regiones o endpoints. Es ideal para aplicaciones con usuarios globales, tiempo crítico o requerimientos de alta resiliencia.",
           "image": "https://d1.awsstatic.com/product-marketing/Global%20Accelerator/Logo_AWSGlobalAccelerator_64.png"
-        }
+        },
+        {
+          "name": "Network acl",
+          "description": "Una Network ACL (Lista de Control de Acceso de Red) proporciona control de tráfico a nivel de subred en una VPC. Funciona como un firewall con reglas explícitas de entrada y salida que permiten o deniegan el tráfico según criterios definidos, lo que la convierte en la herramienta más adecuada para esta necesidad.<br><br>Una AWS Network ACL (ACL de red) es un firewall virtual sin estado que funciona a nivel de subred en una VPC (Virtual Private Cloud) para permitir o denegar el tráfico de red entrante y saliente. Actúa como una capa de seguridad adicional y evalúa las reglas en orden numérico para determinar si el tráfico debe ser permitido o denegado; si no hay una regla que coincida, la regla comodín por defecto lo deniega.",
+          "image": "imagen/AWS-Network-acl.jpg"
+        }        
       ]
     },
     {
@@ -146,6 +151,16 @@
         {
           "name": "AWS Certificate Manager (ACM)",
           "description": "Servicio que facilita la creación, administración y renovación automática de certificados SSL/TLS para sitios web y aplicaciones. ACM elimina la necesidad de realizar instalaciones manuales y reduce el riesgo de expiración accidental. Se integra nativamente con servicios como CloudFront, Elastic Load Balancing y API Gateway. Ideal para cifrar tráfico HTTPS, asegurar comunicaciones y cumplir buenas prácticas de seguridad sin esfuerzo operativo.",
+          "image": ""
+        },
+        {
+          "name": "Amazon Macie",
+          "description": "AWS Macie es un servicio de seguridad de datos que utiliza aprendizaje automático y coincidencia de patrones para descubrir, clasificar y proteger datos confidenciales en la nube de AWS. Proporciona visibilidad sobre los riesgos de seguridad de los datos y permite la protección automatizada contra ellos. Macie está diseñado para su uso en Amazon S3 y ayuda a identificar automáticamente datos como información de identificación personal (PII), números de tarjetas de crédito, etc.. ",
+          "image": ""
+        },
+        {
+          "name": "Amazon Inspector",
+          "description": "AWS Inspector es un servicio de gestión automatizada de vulnerabilidades que escanea y analiza continuamente las cargas de trabajo de AWS para detectar vulnerabilidades de software y exposiciones de red no deseadas. Identifica riesgos en recursos como instancias de Amazon EC2, imágenes de contenedores (en Amazon ECR) y funciones de AWS Lambda, y luego califica los hallazgos para ayudar a priorizar y mitigar problemas de seguridad.",
           "image": ""
         }
       ]
@@ -386,6 +401,26 @@
       {
         "name": "Principio de privilegio mínimo",
         "description": "El Principio de privilegio mínimo, es una práctica recomendada en la seguridad informática que establece que a las identidades (usuarios, grupos, roles) solo se les debe permitir realizar el menor conjunto de acciones necesarias para completar una tarea específica. Esto ayuda a limitar el acceso involuntario y a realizar el seguimiento de quién tiene acceso a determinados recursos.",
+        "image": ""
+      },
+      {
+        "name": "Origin Access Control",
+        "description": "El Control de Acceso de Origen (OAC por sus siglas en inglés) Es una característica de <b>Amazon CloundFront</b> que permite restringir el acceso a un origen, como un <b>bucket de S3</b>, para que solo sea accesible a través de esa distribución de CloudFront. OAC protege los archivos contra el acceso directo al URL del bucket y mejora la seguridad al permitir la autenticación basada en la entidad de servicio <b>IAM</b> de ClounFront.",
+        "image": "imagen/AWS-OAC.jpg"
+      },
+      {
+        "name": "Resource Access Manager",
+        "description": "Resource Access Manager (RAM) permite compartir recursos de AWS entre cuentas, pero no controla ni restringe el acceso entre CloudFront y S3.",
+        "image": ""
+      },
+      {
+        "name": "Cross-Origin Resource Sharing",
+        "description": "Cross-Origin Resource Sharing (CORS) permite que recursos web compartan datos entre diferentes dominios, pero no impide el acceso directo al bucket desde fuera de CloudFront.",
+        "image": ""
+      },
+      {
+        "name": "Field Level Encryption",
+        "description": "Field-Level Encryption cifra campos específicos de formularios HTTP, pero no está relacionado con el control de acceso entre CloudFront y S3.<br>El Cifrado a Nivel de Campo (FLE) en AWS es una función de seguridad que permite cifrar datos confidenciales dentro de los campos de una solicitud antes de enviarlos al servidor.",
         "image": ""
       }
     ]
