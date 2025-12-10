@@ -145,7 +145,7 @@
         },
         {
           "name": "AWS WAF (Web Application Firewall)",
-          "description": "Firewall para aplicaciones web que permite definir reglas para bloquear, permitir o contar solicitudes HTTP(S) basadas en IP, patrones, strings o condiciones complejas. Útil para mitigar inyección SQL, XSS y otras vulnerabilidades a nivel de aplicación; puede desplegarse frente a CloudFront, ALB o API Gateway y se configura con managed rules o reglas personalizadas.",
+          "description": "AWS WAF (Web Application Firewall) es un firewall que protege aplicaciones web y APIs contra ataques web comunes al permitir monitorear y controlar el tráfico que llega a tus recursos de AWS. Permite crear reglas para bloquear solicitudes maliciosas basadas en criterios como la dirección IP, el valor de un componente de solicitud o la tasa de solicitudes, y protege servicios como CloudFront, API Gateway y Application Load Balancer.",
           "image": "https://d1.awsstatic.com/product-marketing/WAF/Logo_AWSWAF_64.9a6f1d3b402a287f91dd6d8f3b7b0a55e5ff8a02.png"
         },
         {
@@ -385,7 +385,7 @@
     "services": [
       {
         "name": "Modelo de responsabilidad compartida",
-        "description": "El modelo de responsabilidad compartida en AWS divide las responsabilidades de seguridad entre AWS y el cliente. AWS es responsable de la seguridad <b>de la nube</b>, que incluye la infraestructura física como los centros de datos y el hardware. El cliente es responsable de la seguridad <b>en la nube</b>, que abarca la seguridad de sus datos, aplicaciones y la configuración de los servicios que utilizan, como la gestión de acceso y cifrado. ",
+        "description": "El modelo de responsabilidad compartida en AWS divide las responsabilidades de seguridad entre AWS y el cliente. AWS es responsable de la seguridad <b>de la nube</b>, que incluye la infraestructura física como los centros de datos y el hardware. El cliente es responsable de la seguridad <b>en la nube</b>, que abarca la seguridad de sus datos, aplicaciones y la configuración de los servicios que utilizan, como la gestión de acceso y cifrado. <br><br><b>“La seguridad de las infraestructuras y los datos de la Computación en la Nube, es una responsabilidad compartida entre el cliente y AWS”</b> <br> <ul><b>AWS</b> es responsable de proteger la infraestructura global que ejecuta todos los servicios ofrecidos en la nube de AWS. Esta infraestructura comprende el hardware, el software, las redes y las instalaciones que ejecutan los servicios de AWS.</ul><ul>El <b>Cliente</b> de AWS, es responsable de proteger los datos, los sistemas operativos, las redes, las plataformas y otros recursos que genere en la nube de AWS. Es responsable de proteger la confidencialidad, integridad y disponibilidad de sus datos, así como de cumplir cualquier requisito empresarial o de conformidad específico relacionados con sus cargas de trabajo.</ul>",
         "image": "imagen/AWS-MRC.png"
       },
       {
@@ -405,7 +405,7 @@
       },
       {
         "name": "Origin Access Control",
-        "description": "El Control de Acceso de Origen (OAC por sus siglas en inglés) Es una característica de <b>Amazon CloundFront</b> que permite restringir el acceso a un origen, como un <b>bucket de S3</b>, para que solo sea accesible a través de esa distribución de CloudFront. OAC protege los archivos contra el acceso directo al URL del bucket y mejora la seguridad al permitir la autenticación basada en la entidad de servicio <b>IAM</b> de ClounFront.",
+        "description": "El Control de Acceso de Origen (OAC por sus siglas en inglés) Es una característica de <b>Amazon CloudFront</b> que permite restringir el acceso a un origen, como un <b>bucket de S3</b>, para que solo sea accesible a través de esa distribución de CloudFront. OAC protege los archivos contra el acceso directo al URL del bucket y mejora la seguridad al permitir la autenticación basada en la entidad de servicio <b>IAM</b> de ClounFront.",
         "image": "imagen/AWS-OAC.jpg"
       },
       {
